@@ -11,7 +11,8 @@ export default function(options, storage, key) {
       storage.setItem('@@', 1);
       storage.removeItem('@@');
       return true;
-    } catch (e) {}
+    } catch (e) {
+}
 
     return false;
   }
@@ -21,7 +22,9 @@ export default function(options, storage, key) {
       return (value = storage.getItem(key)) && value !== 'undefined'
         ? JSON.parse(value)
         : undefined;
-    } catch (err) {}
+    } catch (err) {
+      console.error('get state error')
+    }
 
     return undefined;
   }
